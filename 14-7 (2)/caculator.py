@@ -1,12 +1,16 @@
 try:
-    a = float(input("Số thứ nhất: "))
-    b = float(input("Số thứ hai: "))
-    op = input("Phép toán (+,-,*,/): ")
+    a = float(input("Nhập số thứ nhất: "))
+    b = float(input("Nhập số thứ hai: "))
+    op = input("Nhập phép toán (+, -, *, /): ").strip()
     match op:
-        case "+": print(f"{a}+{b}={a+b}")
-        case "-": print(f"{a}-{b}={a-b}")
-        case "*": print(f"{a}*{b}={a*b}")
-        case "/": print(f"{a}/{b}={a/b}" if b != 0 else "Lỗi: Chia cho 0!")
-        case _: print("Phép toán không hợp lệ!")
-except:
-    print("Vui lòng nhập số hợp lệ!")
+        case "+": print(f"{a} + {b} = {a + b}")
+        case "-": print(f"{a} - {b} = {a - b}")
+        case "*": print(f"{a} * {b} = {a * b}")
+        case "/":
+            if b != 0:
+                print(f"{a} / {b} = {a / b}")
+            else:
+                print("Lỗi: Không chia được cho 0!")
+        case _: print("Lỗi: Phép toán không hợp lệ!")
+except ValueError:
+    print("Lỗi: Vui lòng nhập số hợp lệ!")
